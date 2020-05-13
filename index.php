@@ -17,8 +17,8 @@ include 'model/UsersDB.php';
 
 include 'support/function.php';
 
-$user = new ControllerUsers();
-$home = new ControllerHome();
+$user = new \Controller\ControllerUsers();
+$home = new \Controller\ControllerHome();
 
 if (isset($_REQUEST['pages'])) {
     switch ($_REQUEST['pages']) {

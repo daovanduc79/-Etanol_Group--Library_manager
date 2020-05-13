@@ -114,7 +114,7 @@ include '../layout/nav.php';
 <div class="container">
     <div class="row">
         <form role="form" class="col-md-9 go-right" method="post">
-            <h2>Add New</h2>
+            <h2>Edit</h2>
             <div class="form-group">
                 <input id="id" name="id" type="text" class="form-control" required>
                 <label for="id">ID</label>
@@ -154,6 +154,7 @@ include '../layout/nav.php';
                 <label for="img">Image</label>
             </div>
             <button type="submit" class="btn btn-primary btn-sm">Confirm</button>
+            <a class="btn btn-default btn-sm" href="index.php">Cancel</a>
         </form>
     </div>
 </div>
