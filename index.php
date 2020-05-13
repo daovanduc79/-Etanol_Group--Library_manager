@@ -1,16 +1,46 @@
 <?php
-?>
+session_start();
+include 'class/Books.php';
+include 'class/Borrows.php';
+include 'class/Categories.php';
+include 'class/Students.php';
+include 'class/Users.php';
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+include 'controller/ControllerUsers.php';
+include 'controller/ControllerHome.php';
 
-</body>
-</html>
+include 'model/ConnectionDB.php';
+include 'model/BooksDB.php';
+include 'model/LibraryDB.php';
+include 'model/StudentsDB.php';
+include 'model/UsersDB.php';
+
+include 'support/function.php';
+
+$user = new ControllerUsers();
+$home = new ControllerHome();
+
+if (isset($_REQUEST['pages'])) {
+    switch ($_REQUEST['pages']) {
+        case 'user':
+            if (isset($_REQUEST['actions'])) {
+                switch ($_REQUEST['actions']) {
+                    case 'login':
+                        $user->login();
+                        break;
+                    case 'registration':
+                        $user->registration();
+                        break;
+                    default:
+                        $user->login();
+                }
+            }
+            break;
+        case 'home':
+            $home->show();
+            break;
+        default:
+            $user->login();
+    }
+}
+

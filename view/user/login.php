@@ -115,7 +115,7 @@
         <div class="row">
             <div class="col-md-4 login-sec">
                 <h2 class="text-center">Login Now</h2>
-                <form class="login-form">
+                <form class="login-form" method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="text-uppercase">Email</label>
                         <input type="text" class="form-control" placeholder="" name="email">
@@ -133,7 +133,7 @@
                         <button type="submit" class="btn btn-login float-right">Submit</button>
                     </div>
                 </form>
-                <div class="copy-text"><a href="registration.php">Create new account</a></div>
+                <div class="copy-text"><a href="index.php?pages=user&actions=registration">Create new account</a></div>
             </div>
             <div class="col-md-8 banner-sec">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

@@ -27,7 +27,7 @@ class LibraryDB
         return $stmt->fetch();
     }
 
-    public function getALl()
+    public function getAll()
     {
         $sql = "SELECT * FROM ? ";
         $stmt = $this->conn->prepare($sql);
