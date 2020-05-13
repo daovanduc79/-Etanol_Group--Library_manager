@@ -9,17 +9,20 @@
     <style>
         @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 
-        .form-control{
+        .form-control {
             background: transparent;
         }
+
         form {
             width: 320px;
             margin: 20px;
         }
+
         form > div {
             position: relative;
             overflow: hidden;
         }
+
         form input, form textarea {
             width: 100%;
             border: 2px solid gray;
@@ -31,12 +34,15 @@
             padding: 8px 12px;
             outline: 0;
         }
+
         form input:valid, form textarea:valid {
             background: white;
         }
+
         form input:focus, form textarea:focus {
             border-color: #357EBD;
         }
+
         form input:focus + label, form textarea:focus + label {
             background: #357EBD;
             color: white;
@@ -45,6 +51,7 @@
             z-index: 2;
             text-transform: uppercase;
         }
+
         form label {
             -webkit-transition: background 0.2s, color 0.2s, top 0.2s, bottom 0.2s, right 0.2s, left 0.2s;
             transition: background 0.2s, color 0.2s, top 0.2s, bottom 0.2s, right 0.2s, left 0.2s;
@@ -53,26 +60,32 @@
             padding: 7px 6px;
             font-weight: normal;
         }
+
         form textarea {
             display: block;
             resize: vertical;
         }
+
         form.go-bottom input, form.go-bottom textarea {
             padding: 12px 12px 12px 12px;
         }
+
         form.go-bottom label {
             top: 0;
             bottom: 0;
             left: 0;
             width: 100%;
         }
+
         form.go-bottom input:focus, form.go-bottom textarea:focus {
             padding: 4px 6px 20px 6px;
         }
+
         form.go-bottom input:focus + label, form.go-bottom textarea:focus + label {
             top: 100%;
             margin-top: -16px;
         }
+
         form.go-right label {
             border-radius: 0 5px 5px 0;
             height: 100%;
@@ -81,6 +94,7 @@
             width: 100%;
             margin-right: -100%;
         }
+
         form.go-right input:focus + label, form.go-right textarea:focus + label {
             right: 0;
             margin-right: 0;
@@ -122,16 +136,18 @@
                 <input id="category ID" name="category ID" type="text" class="form-control" required>
                 <label for="category ID">Category ID</label>
             </div>
-            <div class="form-group">
-                <input id="status" name="status" type="text" class="form-control" required>
-                <label for="status">Status</label>
-            </div>
+                <div class="form-group">
+                  <select name="status">
+                      <option>New</option>
+                      <option>Old</option>
+                  </select>
+                </div>
             <div class="form-group">
                 <input id="amount" name="amount" type="text" class="form-control" required>
                 <label for="amount">Amount</label>
             </div>
             <div class="form-group">
-                <input id="img" name="img" type="image" class="form-control" required>
+                <input id="img" name="img" type="file" class="form-control" required>
                 <label for="img">Image</label>
             </div>
             <button type="submit" class="btn btn-primary btn-sm">Xác nhận</button>
