@@ -90,7 +90,7 @@
                     <a class="nav-link" href="#">Category</a>
                 </li>
                 <li class="navbar-nav  my-2 my-lg-0">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log out</button>
+                    <a class="btn btn-outline-success my-2 my-sm-0" type="submit" href="#">Log out</a>
                 </li>
             </ul>
         </div>
