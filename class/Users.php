@@ -6,11 +6,11 @@ use Model\LibraryDB;
 
 class Users
 {
-    public $id;
-    public $name;
-    public $email;
-    public $password;
-    public $phone;
+    protected $id;
+    protected $name;
+    protected $email;
+    protected $password;
+    protected $phone;
 
     public function __construct($id, $name, $email, $password, $phone)
     {
@@ -21,4 +21,43 @@ class Users
         $this->phone = $phone;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
 }
