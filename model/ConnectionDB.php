@@ -21,11 +21,15 @@ class ConnectionDB
 
     public function connect()
     {
+        $conn = null;
+
         try {
             $conn = new PDO($this->server, $this->username, $this->password);
         } catch (PDOException $e) {
             $e->getMessage();
             exit();
         }
+
+        return $conn;
     }
 }
