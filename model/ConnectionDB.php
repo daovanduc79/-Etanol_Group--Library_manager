@@ -12,7 +12,7 @@ class ConnectionDB
     protected $username;
     protected $password;
 
-    protected function __construct()
+    public function __construct()
     {
         $this->server = "mysql:host=localhost;dbname=case_study_md2";
         $this->username = "root";
