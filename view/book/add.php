@@ -139,12 +139,12 @@ include '../layout/nav.php';
                 <input id="category ID" name="category ID" type="text" class="form-control" required>
                 <label for="category ID">Category ID</label>
             </div>
-                <div class="form-group">
-                  <select name="status">
-                      <option>New</option>
-                      <option>Old</option>
-                  </select>
-                </div>
+            <div class="form-group">
+                <select name="status">
+                    <option>New</option>
+                    <option>Old</option>
+                </select>
+            </div>
             <div class="form-group">
                 <input id="amount" name="amount" type="text" class="form-control" required>
                 <label for="amount">Amount</label>
