@@ -9,11 +9,11 @@ class LibraryDB
     public $conn;
     protected $nameTable;
 
-    public function __construct($nameTable)
+    public function __construct()
     {
         $this->conn = new ConnectionDB();
         $this->conn = $this->conn->connect();
-        $this->nameTable = $nameTable;
+        $this->nameTable;
     }
 
     public function get($id)
