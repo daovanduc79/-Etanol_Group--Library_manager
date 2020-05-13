@@ -114,26 +114,29 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 login-sec">
-                <h2 class="text-center">Login Now</h2>
+                <h2 class="text-center">Registration Now</h2>
                 <form class="login-form">
+                    <div class="form-group">
+                        <label for="exampleID" class="text-uppercase">ID</label>
+                        <input type="text" class="form-control" placeholder="" name="id">
+                    </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="text-uppercase">Email</label>
                         <input type="text" class="form-control" placeholder="" name="email">
-
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPhone" class="text-uppercase">Phone</label>
+                        <input type="text" class="form-control" placeholder="" name="phone">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1" class="text-uppercase">Password</label>
                         <input type="password" class="form-control" placeholder="" name="password">
                     </div>
                     <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input">
-                            <small>Remember Me</small>
-                        </label>
                         <button type="submit" class="btn btn-login float-right">Submit</button>
                     </div>
                 </form>
-                <div class="copy-text"><a href="registration.php">Create new account</a></div>
+                <div class="copy-text"><a href="">Forgot password</a></div>
             </div>
             <div class="col-md-8 banner-sec">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
