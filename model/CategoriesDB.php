@@ -38,4 +38,10 @@ class CategoriesDB extends LibraryDB
         $stmt->bindParam(4, $idOld);
         $stmt->execute();
     }
+
+    function search($keyword) {
+        $sql = "SELECT * FROM WHERE id LIKE '%$keyword%' OR name LIKE '%$keyword%';";
+        $stmt = $this->conn->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
 }

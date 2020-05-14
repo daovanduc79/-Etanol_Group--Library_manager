@@ -85,4 +85,16 @@ class ControllerCategory
             include 'view/category/edit.php';
         }
     }
+
+    function delete() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $id = $_REQUEST['id'];
+            $this->category->delete($id);
+            header('Location: index.php?pages=category');
+        } else {
+            $id = $_REQUEST['id'];
+            $categoryById = $this->category->get($id);
+            include 'view/category/delete.php';
+        }
+    }
 }
