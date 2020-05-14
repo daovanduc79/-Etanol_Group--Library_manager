@@ -2,8 +2,6 @@
 
 namespace Library;
 
-use Model\LibraryDB;
-
 class Users
 {
     protected $id;

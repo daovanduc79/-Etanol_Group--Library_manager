@@ -19,7 +19,7 @@ class UsersDB extends LibraryDB
         $email = $user->getEmail();
         $password = $user->getPassword();
         $phone = $user->getPhone();
-        $sql = 'INSERT INTO users (id,name,email,password,phone) VALUES (?,?,?,?,?);';
+        $sql = "INSERT INTO $this->nameTable (id,name,email,password,phone) VALUES (?,?,?,?,?);";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(1, $id);
         $stmt->bindParam(2, $name);

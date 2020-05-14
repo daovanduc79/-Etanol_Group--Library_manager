@@ -1,4 +1,9 @@
 <?php
+
+use Controller\ControllerCategory;
+use Controller\ControllerHome;
+use Controller\ControllerUsers;
+
 session_start();
 include 'class/Books.php';
 include 'class/Borrows.php';
@@ -20,9 +25,9 @@ include 'model/CategoriesDB.php';
 
 include 'support/function.php';
 
-$user = new \Controller\ControllerUsers();
-$home = new \Controller\ControllerHome();
-$category = new \Controller\ControllerCategory();
+$user = new ControllerUsers();
+$home = new ControllerHome();
+$category = new ControllerCategory();
 
 if (isset($_REQUEST['pages'])) {
     switch ($_REQUEST['pages']) {
