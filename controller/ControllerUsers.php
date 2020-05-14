@@ -90,21 +90,22 @@ class ControllerUsers
 
     function login()
     {
-        if ($_SERVER['REQUEST_METHOD'] === "POST") {
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
             // lay du lieu tu form login
             $email = $_REQUEST['email'];
             $password = $_REQUEST['password'];
             // check voi tren csdl
             $checkLogin = $this->user->login($email, $password);
-
             if ($checkLogin) {
-                $_SESSION['login'] = $checkLogin;
+                $_SESSION['login'] = true;
                 // cho phep vao home
                 header('location: index.php?pages=home');
             } else {
                 $_SESSION['errorLogin'] = 'email or password incorrect';
                 header('location: index.php?pages=user&actions=login');
             }
+        } else {
+            include 'view/user/login.php';
         }
     }
 }

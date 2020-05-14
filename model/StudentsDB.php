@@ -4,7 +4,11 @@
 namespace Model;
 
 
-class StudentsDB
+class StudentsDB extends LibraryDB
 {
-
+    public function __construct()
+    {
+        parent::__construct();
+        $this->nameTable = 'students';
+    }
 }
