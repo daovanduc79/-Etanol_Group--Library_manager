@@ -18,4 +18,20 @@ class ControllerStudent
         $students = $this->student->getAll();
         include 'view/student/list.php';
     }
+
+    function add() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        } else {
+            include 'view/student/add.php';
+        }
+    }
+
+    function edit() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        } else {
+            include 'view/student/edit.php';
+        }
+    }
 }

@@ -94,7 +94,16 @@ if (isset($_REQUEST['pages'])) {
             break;
         case 'student':
             if (isset($_REQUEST['actions'])) {
-
+                switch ($_REQUEST['actions']) {
+                    case 'add':
+                        $student->add();
+                        break;
+                    case 'edit':
+                        $student->edit();
+                        break;
+                    default :
+                        header('Location: index.php?pages=student');
+                }
             } else {
                 $student->show();
             }
