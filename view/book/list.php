@@ -1,6 +1,6 @@
 <?php
 
-include '../layout/nav.php';
+include 'view/layout/nav.php';
 ?>
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -8,7 +8,7 @@ include '../layout/nav.php';
 
 <div class="container">
     <div class="col-md-12">
-        <a href="../productManagementMVC/index.php?pages=add_book" class="btn btn-success btn-sm"
+        <a href="index.php?pages=add_book" class="btn btn-success btn-sm"
            style="margin-left: 92.5%">Thêm
             mới</a>
         <div class="card">

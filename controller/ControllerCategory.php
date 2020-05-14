@@ -65,7 +65,7 @@ class ControllerCategory
                     $category = new Categories($_SESSION['id'], $_SESSION['name'], $_SESSION['imageById']);
                     update($this->category, $category, $_SESSION['idOld']);
                     header("Location: index.php?pages=student");
-                } elseif ($_SESSION['checkImage'] == 'Upload file thành công') {
+                } else if ($_SESSION['checkImage'] == 'Upload file thành công') {
                     $category = new Categories($_SESSION['id'], $_SESSION['name'], $_SESSION['imageName']);
                     unlink('images/' . $_SESSION['imageById']);
                     update($this->category, $category, $_SESSION['idOld']);

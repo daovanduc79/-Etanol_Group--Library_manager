@@ -3,7 +3,6 @@
 
 namespace Model;
 
-
 use PDO;
 
 class LibraryDB
@@ -39,9 +38,8 @@ class LibraryDB
 
     public function delete()
     {
-        $sql = "DELETE FROM ?";
+        $sql = "DELETE FROM $this->nameTable ;";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bindParam(1, $this->nameTable);
 
         return $stmt->execute();
     }

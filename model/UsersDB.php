@@ -26,7 +26,7 @@ class UsersDB extends LibraryDB
         $stmt->bindParam(3, $email);
         $stmt->bindParam(4, $password);
         $stmt->bindParam(5, $phone);
-        $stmt->execute();
+        return $stmt->execute();
     }
 
     public function login($email, $password)
