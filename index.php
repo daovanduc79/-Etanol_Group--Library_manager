@@ -69,6 +69,13 @@ if (isset($_REQUEST['pages'])) {
                             header('Location: index.php?pages=category');
                         }
                         break;
+                    case 'search':
+                        if (isset($_REQUEST['keyword'])) {
+                            $category->search();
+                        } else {
+                            header('Location: index.php?pages=category');
+                        }
+                        break;
                     default:
                         header('Location: index.php?pages=category');
                 }

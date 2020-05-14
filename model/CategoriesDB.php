@@ -3,7 +3,7 @@
 
 namespace Model;
 
-
+use PDO;
 class CategoriesDB extends LibraryDB
 {
     public function __construct()
@@ -40,7 +40,7 @@ class CategoriesDB extends LibraryDB
     }
 
     function search($keyword) {
-        $sql = "SELECT * FROM WHERE id LIKE '%$keyword%' OR name LIKE '%$keyword%';";
+        $sql = "SELECT * FROM $this->nameTable WHERE id LIKE '%$keyword%' OR name LIKE '%$keyword%';";
         $stmt = $this->conn->query($sql);
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }

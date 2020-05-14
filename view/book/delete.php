@@ -1,5 +1,5 @@
 <?php
-include '../layout/nav.php';
+include '../layout/nav_2.php';
 ?>
 <div class="container">
     <div class="col-md-12">

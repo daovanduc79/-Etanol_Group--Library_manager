@@ -91,20 +91,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?pages=category">Categories</a>
                 </li>
-                <li class="navbar-nav  my-2 my-lg-0">
-                    <a class="btn btn-outline-danger my-2 my-sm-0" type="submit" href="index.php?pages=logout">Log out</a>
-                </li>
             </ul>
         </div>
-        <form class="classNameHere" role="search" method='get'>
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search" name="search" id="srch-term">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                </div>
-            </div>
-        </form>
     </div>
+    <li class="navbar-nav  my-2 my-lg-0">
+        <a class="btn btn-outline-danger my-2 my-sm-0" type="submit" href="index.php?pages=logout">Log out</a>
+    </li>
 </nav>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

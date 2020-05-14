@@ -97,4 +97,10 @@ class ControllerCategory
             include 'view/category/delete.php';
         }
     }
+
+    function search() {
+        $keyword = $_REQUEST['keyword'];
+        $categories = $this->category->search($keyword);
+        include 'view/category/list.php';
+    }
 }
