@@ -124,30 +124,30 @@ include '../layout/nav_2.php';
                 <label for="name">Name</label>
             </div>
             <div class="form-group">
-                <input id="author" name="author" type="text" class="form-control" required>
-                <label for="author">Author</label>
+                <input id="email" name="email" type="text" class="form-control" required>
+                <label for="email">Email</label>
             </div>
             <div class="form-group">
-                <input id="price" name="price" type="tel" class="form-control" required>
-                <label for="price">Price</label>
+                <input id="phone" name="phone" type="tel" class="form-control" required>
+                <label for="phone">Phone</label>
             </div>
             <div class="form-group">
-                <textarea id="producer" name="producer" class="form-control" required></textarea>
-                <label for="producer">Producer</label>
+                <textarea id="address" name="address" class="form-control" required></textarea>
+                <label for="address">Address</label>
             </div>
             <div class="form-group">
-                <input id="category ID" name="category ID" type="text" class="form-control" required>
-                <label for="category ID">Category ID</label>
+                <input id="birthday" name="birthday" type="date" class="form-control" required>
+                <label for="birthday">Birthday</label>
             </div>
             <div class="form-group">
                 <select name="status">
-                    <option>New</option>
-                    <option>Old</option>
+                    <option>Borrow</option>
+                    <option>Pay</option>
                 </select>
             </div>
             <div class="form-group">
-                <input id="amount" name="amount" type="text" class="form-control" required>
-                <label for="amount">Amount</label>
+                <input id="class_id" name="class_id" type="text" class="form-control" required>
+                <label for="class_id">Class ID</label>
             </div>
             <div class="form-group">
                 <input id="img" name="img" type="file" class="form-control" required>

@@ -83,10 +83,10 @@
                     <a class="nav-link" href="index.php?pages=book">Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Students</a>
+                    <a class="nav-link" href="index.php?pages=student">Students</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Borrows</a>
+                    <a class="nav-link" href="index.php?pages=borrow">Borrows</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?pages=category">Categories</a>

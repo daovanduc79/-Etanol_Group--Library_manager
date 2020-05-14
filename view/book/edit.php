@@ -115,6 +115,7 @@ include '../layout/nav_2.php';
     <div class="row">
         <form role="form" class="col-md-9 go-right" method="post">
             <h2>Edit</h2>
+            <h3><?php echo $book->name; ?></h3>
             <div class="form-group">
                 <input id="id" name="id" type="text" class="form-control" required>
                 <label for="id">ID</label>
