@@ -8,7 +8,7 @@ include 'view/layout/nav.php';
 
 <div class="container">
     <div class="col-md-12">
-        <a href="index.php?pages=category&actions=add" class="btn btn-success btn-sm" style="margin-left: 92.5%">Thêm
+        <a href="index.php?pages=category&actions=add_category" class="btn btn-success btn-sm" style="margin-left: 92.5%">Thêm
             mới</a>
         <div class="card">
             <table class="table table-hover shopping-cart-wrap">

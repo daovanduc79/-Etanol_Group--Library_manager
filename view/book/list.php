@@ -8,7 +8,7 @@ include '../layout/nav.php';
 
 <div class="container">
     <div class="col-md-12">
-        <a href="../productManagementMVC/index.php?page=add" class="btn btn-success btn-sm" style="margin-left: 92.5%">Thêm
+        <a href="../productManagementMVC/index.php?pages=add_book" class="btn btn-success btn-sm" style="margin-left: 92.5%">Thêm
             mới</a>
         <div class="card">
             <table class="table table-hover shopping-cart-wrap">
@@ -45,9 +45,9 @@ include '../layout/nav.php';
                             </div>
                         </td>
                         <td class="text-right">
-                            <a title="" href="./index.php?page=edit_book&id=<?php echo $book->id; ?>"
+                            <a title="" href="./index.php?pages=edit_book&id=<?php echo $book->id; ?>"
                                class="btn btn-success btn-sm">Edit</a>
-                            <a href="./index.php?page=delete_book&id=<?php echo $book->id; ?>"
+                            <a href="./index.php?pages=delete_book&id=<?php echo $book->id; ?>"
                                class="btn btn-danger btn-sm"> × Remove</a>
                         </td>
                     </tr>
