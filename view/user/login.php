@@ -118,13 +118,19 @@
                 <form class="login-form" method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="text-uppercase">Email</label>
-                        <input type="text" class="form-control" placeholder="" name="email">
+                        <input type="email" class="form-control" placeholder="" name="email">
 
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1" class="text-uppercase">Password</label>
                         <input type="password" class="form-control" placeholder="" name="password">
                     </div>
+                    <?php
+                    if (isset($_SESSION['errorLogin'])) {
+                        echo $_SESSION['errorLogin'];
+                        unset($_SESSION['errorLogin']);
+                    }
+                    ?>
                     <div class="form-check">
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input">

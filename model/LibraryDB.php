@@ -4,6 +4,8 @@
 namespace Model;
 
 
+use PDO;
+
 class LibraryDB
 {
     public $conn;
@@ -18,23 +20,21 @@ class LibraryDB
 
     public function get($id)
     {
-        $sql = "SELECT * FROM ? WHERE `id` = ?";
+        $sql = "SELECT * FROM $this->nameTable WHERE `id` = ?";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bindParam(1, $this->nameTable);
-        $stmt->bindParam(2, $id);
+        $stmt->bindParam(1, $id);
         $stmt->execute();
 
-        return $stmt->fetch();
+        return $stmt->fetch(PDO::FETCH_OBJ);
     }
 
     public function getAll()
     {
-        $sql = "SELECT * FROM ? ";
+        $sql = "SELECT * FROM $this->nameTable; ";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bindParam(1, $this->nameTable);
         $stmt->execute();
 
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function delete()
