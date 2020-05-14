@@ -1,5 +1,6 @@
 <?php
 
+use Controller\ControllerBook;
 use Controller\ControllerCategory;
 use Controller\ControllerHome;
 use Controller\ControllerUsers;
@@ -28,6 +29,7 @@ include 'support/function.php';
 $user = new ControllerUsers();
 $home = new ControllerHome();
 $category = new ControllerCategory();
+$book = new ControllerBook();
 
 if (isset($_REQUEST['pages'])) {
     switch ($_REQUEST['pages']) {
@@ -67,6 +69,22 @@ if (isset($_REQUEST['pages'])) {
             break;
         case 'home':
             $home->show();
+            break;
+        case 'book':
+            if (isset($_REQUEST['actions'])) {
+                switch ($_REQUEST['actions']) {
+                    case 'add':
+                        $book->add();
+                        break;
+                    case 'edit':
+                        $book->edit();
+                        break;
+                    default :
+                        header('Location: index.php?pages=book');
+                }
+            } else {
+                $book->show();
+            }
             break;
         default:
             $user->login();

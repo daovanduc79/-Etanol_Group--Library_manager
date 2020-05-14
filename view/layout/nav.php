@@ -78,16 +78,16 @@
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Book</a>
+                    <a class="nav-link" href="index.php?pages=book">Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Student</a>
+                    <a class="nav-link" href="#">Students</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Borrow</a>
+                    <a class="nav-link" href="#">Borrows</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Category</a>
+                    <a class="nav-link" href="index.php?pages=category">Categories</a>
                 </li>
                 <li class="navbar-nav  my-2 my-lg-0">
                     <a class="btn btn-outline-success my-2 my-sm-0" type="submit" href="#">Log out</a>
