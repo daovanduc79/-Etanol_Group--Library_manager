@@ -393,7 +393,7 @@
                             <button class="btn btn-primary mr-2">
                                 Login
                             </button>
-                            <a class="btn btn-primary mr-2" href="registration.php">
+                            <a class="btn btn-primary mr-2" href="index.php?=pages=user&actions=registration">
                                 New User
                             </a>
                         </div>

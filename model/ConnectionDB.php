@@ -16,7 +16,7 @@ class ConnectionDB
     {
         $this->server = "mysql:host=localhost;dbname=library";
         $this->username = "root";
-        $this->password = "774111@Tvt";
+        $this->password = "123456@abc";
     }
 
     public function connect()
