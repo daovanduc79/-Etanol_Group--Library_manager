@@ -33,5 +33,6 @@ class CategoriesDB extends LibraryDB
         $stmt->bindParam(2,$name);
         $stmt->bindParam(3,$image);
         $stmt->bindParam(4,$idOld);
+        $stmt->execute();
     }
 }

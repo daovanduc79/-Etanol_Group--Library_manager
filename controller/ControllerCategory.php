@@ -63,7 +63,7 @@ class ControllerCategory
                 if (($_SESSION['checkImage'] == 'Lỗi : File đã tồn tại.' && $_SESSION['imageName'] == $_SESSION['imageById']) || $_SESSION['checkImage'] == "Lỗi: Image is empty") {
                     $category = new Categories($_SESSION['id'],$_SESSION['name'],$_SESSION['imageById']);
                     update($this->category, $category, $_SESSION['idOld']);
-                    header("Location: index.php?pages=student");
+                    header("Location: index.php?pages=category");
                 } elseif ($_SESSION['checkImage'] == 'Upload file thành công') {
                     $category = new Categories($_SESSION['id'],$_SESSION['name'],$_SESSION['imageName']);
                     unlink('images/' . $_SESSION['imageById']);
