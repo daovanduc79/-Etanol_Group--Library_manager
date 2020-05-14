@@ -43,4 +43,3 @@ if (isset($_REQUEST['pages'])) {
             $user->login();
     }
 }
-

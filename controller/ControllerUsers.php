@@ -13,7 +13,7 @@ class ControllerUsers
         $this->user = new UsersDB();
     }
 
-    function registration()
+    public function registration()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $id = $_REQUEST['id'];
@@ -88,7 +88,7 @@ class ControllerUsers
         }
     }
 
-    function login()
+    public function login()
     {
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
             // lay du lieu tu form login
