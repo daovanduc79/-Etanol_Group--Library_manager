@@ -115,6 +115,7 @@ include '../layout/nav_2.php';
     <div class="row">
         <form role="form" class="col-md-9 go-right" method="post" enctype="multipart/form-data">
             <h2>Edit</h2>
+            <h3><?php echo $categories->name; ?></h3>
             <div class="form-group">
                 <input id="id" name="id" type="text" class="form-control"
                        value="<?php echo isset($_SESSION['id']) ? $_SESSION['id'] : $id ?>" required>
