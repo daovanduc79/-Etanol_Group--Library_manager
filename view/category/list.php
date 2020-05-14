@@ -25,7 +25,8 @@ include 'view/layout/nav.php';
                     <tr>
                         <td><?php echo $category->id ?></td>
                         <td>
-                            <h6 class="title text-truncate"><img width="70" height="100" src="images/<?php echo $category->image ?>"</h6>
+                            <h6 class="title text-truncate"><img width="70" height="100"
+                                                                 src="images/<?php echo $category->image ?>"</h6>
                         </td>
                         <td>
                             <div class="price-wrap">

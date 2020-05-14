@@ -116,20 +116,22 @@ include 'view/layout/nav.php';
         <form role="form" class="col-md-9 go-right" method="post" enctype="multipart/form-data">
             <h2>Edit</h2>
             <div class="form-group">
-                <input id="id" name="id" type="text" class="form-control" value="<?php echo isset($_SESSION['id'])?$_SESSION['id']:$id ?>" required>
+                <input id="id" name="id" type="text" class="form-control"
+                       value="<?php echo isset($_SESSION['id']) ? $_SESSION['id'] : $id ?>" required>
                 <label for="id">ID</label>
                 <?php
-                if (isset($_SESSION['id'])&&$_SESSION['id']=='') {
+                if (isset($_SESSION['id']) && $_SESSION['id'] == '') {
                     echo 'Id is malformed!';
                     unset($_SESSION['id']);
                 }
                 ?>
             </div>
             <div class="form-group">
-                <input id="name" name="name" type="text" class="form-control" value="<?php echo isset($_SESSION['name'])?$_SESSION['name']:$name ?>" required>
+                <input id="name" name="name" type="text" class="form-control"
+                       value="<?php echo isset($_SESSION['name']) ? $_SESSION['name'] : $name ?>" required>
                 <label for="name">Name</label>
                 <?php
-                if (isset($_SESSION['name'])&&$_SESSION['name']=='') {
+                if (isset($_SESSION['name']) && $_SESSION['name'] == '') {
                     echo 'Name is malformed!';
                     unset($_SESSION['name']);
                 }

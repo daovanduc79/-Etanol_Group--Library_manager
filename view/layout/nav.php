@@ -6,7 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <style>
+
         /*author: Limon*/
         .navbar-nav .nav-link {
             position: relative;
@@ -54,12 +56,12 @@
             right: -5%;
             transition: 0.6s;
         }
+
     </style>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 <body>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -78,24 +80,34 @@
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Book</a>
+                    <a class="nav-link" href="index.php?pages=book">Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Student</a>
+                    <a class="nav-link" href="#">Students</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Borrow</a>
+                    <a class="nav-link" href="#">Borrows</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Category</a>
+                    <a class="nav-link" href="index.php?pages=category">Categories</a>
                 </li>
                 <li class="navbar-nav  my-2 my-lg-0">
-                    <a class="btn btn-outline-success my-2 my-sm-0" type="submit" href="#">Log out</a>
+                    <a class="btn btn-outline-danger my-2 my-sm-0" type="submit" href="index.php?pages=logout">Log out</a>
                 </li>
             </ul>
         </div>
+        <form class="classNameHere" role="search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+            </div>
+        </form>
     </div>
 </nav>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>

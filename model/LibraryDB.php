@@ -13,8 +13,8 @@ class LibraryDB
 
     public function __construct()
     {
-        $this->conn = new ConnectionDB();
-        $this->conn = $this->conn->connect();
+        $conn = new ConnectionDB();
+        $this->conn = $conn->connect();
         $this->nameTable;
     }
 
@@ -30,7 +30,7 @@ class LibraryDB
 
     public function getAll()
     {
-        $sql = "SELECT * FROM $this->nameTable; ";
+        $sql = "SELECT * FROM $this->nameTable ;";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
 

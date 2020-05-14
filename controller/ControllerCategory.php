@@ -33,7 +33,7 @@ class ControllerCategory
             if ($_SESSION['id'] != '' && $_SESSION['name'] != '') {
                 $_SESSION['checkImage'] = checkUploadImage($image, 'images/');
                 if ($_SESSION['checkImage'] == 'Upload file thành công') {
-                    $student = new Categories($_SESSION['id'],$_SESSION['name'],$_SESSION['imageName']);
+                    $student = new Categories($_SESSION['id'], $_SESSION['name'], $_SESSION['imageName']);
                     $this->category->add($student);
                     unset($_SESSION['id']);
                     unset($_SESSION['name']);
@@ -50,9 +50,10 @@ class ControllerCategory
         }
     }
 
-    function edit() {
+    function edit()
+    {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $_SESSION['id']  = $_REQUEST['id'];
+            $_SESSION['id'] = $_REQUEST['id'];
             $id = $_SESSION['id'];
             $image = $_FILES['image'];
             $_SESSION['imageName'] = $image['name'];
@@ -61,11 +62,11 @@ class ControllerCategory
             if ($_SESSION['name'] != '' && $_SESSION['id'] != '') {
                 $_SESSION['checkImage'] = checkUploadImage($image, 'images/');
                 if (($_SESSION['checkImage'] == 'Lỗi : File đã tồn tại.' && $_SESSION['imageName'] == $_SESSION['imageById']) || $_SESSION['checkImage'] == "Lỗi: Image is empty") {
-                    $category = new Categories($_SESSION['id'],$_SESSION['name'],$_SESSION['imageById']);
+                    $category = new Categories($_SESSION['id'], $_SESSION['name'], $_SESSION['imageById']);
                     update($this->category, $category, $_SESSION['idOld']);
                     header("Location: index.php?pages=category");
                 } elseif ($_SESSION['checkImage'] == 'Upload file thành công') {
-                    $category = new Categories($_SESSION['id'],$_SESSION['name'],$_SESSION['imageName']);
+                    $category = new Categories($_SESSION['id'], $_SESSION['name'], $_SESSION['imageName']);
                     unlink('images/' . $_SESSION['imageById']);
                     update($this->category, $category, $_SESSION['idOld']);
                     header("Location: index.php?pages=category");

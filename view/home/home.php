@@ -1,2 +1,2 @@
 <?php
-echo 'Hello';
+include_once 'view/layout/nav.php';

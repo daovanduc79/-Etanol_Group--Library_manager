@@ -30,6 +30,7 @@ function checkPhoneNUmber($phoneNumber)
     $regexp4 = '/^07[06-9]{1}\d{7}$/';
     return preg_match($regexp1, $phoneNumber) || preg_match($regexp2, $phoneNumber) || preg_match($regexp3, $phoneNumber) || preg_match($regexp4, $phoneNumber);
 }
+
 function checkFalseLogin()
 {
     if (!isset($_SESSION['user'])) {

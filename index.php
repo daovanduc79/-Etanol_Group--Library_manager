@@ -1,4 +1,10 @@
 <?php
+
+use Controller\ControllerBook;
+use Controller\ControllerCategory;
+use Controller\ControllerHome;
+use Controller\ControllerUsers;
+
 session_start();
 include 'class/Books.php';
 include 'class/Borrows.php';
@@ -20,9 +26,10 @@ include 'model/CategoriesDB.php';
 
 include 'support/function.php';
 
-$user = new \Controller\ControllerUsers();
-$home = new \Controller\ControllerHome();
-$category = new \Controller\ControllerCategory();
+$user = new ControllerUsers();
+$home = new ControllerHome();
+$category = new ControllerCategory();
+$book = new ControllerBook();
 
 if (isset($_REQUEST['pages'])) {
     switch ($_REQUEST['pages']) {
@@ -63,8 +70,23 @@ if (isset($_REQUEST['pages'])) {
         case 'home':
             $home->show();
             break;
+        case 'book':
+            if (isset($_REQUEST['actions'])) {
+                switch ($_REQUEST['actions']) {
+                    case 'add':
+                        $book->add();
+                        break;
+                    case 'edit':
+                        $book->edit();
+                        break;
+                    default :
+                        header('Location: index.php?pages=book');
+                }
+            } else {
+                $book->show();
+            }
+            break;
         default:
             $user->login();
     }
 }
-
