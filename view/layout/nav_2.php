@@ -76,20 +76,24 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Home</a>
+                <li class="nav-item <?php echo (isset($_REQUEST['pages']) && $_REQUEST['pages'] == 'home') ? 'active' : '' ?>">
+                    <a class="nav-link" href="index.php?pages=home">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?pages=book">Books</a>
+                <li class="nav-item <?php echo (isset($_REQUEST['pages']) && $_REQUEST['pages'] == 'book') ? 'active' : '' ?>">
+
+                <a class="nav-link" href="index.php?pages=book">Books</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?pages=student">Students</a>
+                <li class="nav-item <?php echo (isset($_REQUEST['pages']) && $_REQUEST['pages'] == 'student') ? 'active' : '' ?>">
+
+                <a class="nav-link" href="index.php?pages=student">Students</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?pages=borrow">Borrows</a>
+                <li class="nav-item <?php echo (isset($_REQUEST['pages']) && $_REQUEST['pages'] == 'borrow') ? 'active' : '' ?>" >
+
+                <a class="nav-link" href="index.php?pages=borrow">Borrows</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?pages=category">Categories</a>
+                <li class="nav-item <?php echo (isset($_REQUEST['pages']) && $_REQUEST['pages'] == 'category') ? 'active' : '' ?>">
+
+                <a class="nav-link" href="index.php?pages=category">Categories</a>
                 </li>
             </ul>
         </div>
