@@ -3,7 +3,7 @@
 
 namespace Model;
 
-
+use PDO;
 class StudentsDB extends LibraryDB
 {
     public function __construct()
@@ -37,6 +37,12 @@ class StudentsDB extends LibraryDB
     function getId() {
         $sql = "SELECT id FROM $this->nameTable;";
         $stmt=$this->conn->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    function search($keyword) {
+        $sql = "SELECT * FROM $this->nameTable WHERE id LIKE '%$keyword%' OR name LIKE '%$keyword%' OR email LIKE '%$keyword%' OR status LIKE '%$keyword%';";
+        $stmt = $this->conn->query($sql);
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 }

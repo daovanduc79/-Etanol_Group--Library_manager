@@ -38,4 +38,19 @@ class UsersDB extends LibraryDB
         $stmt->execute();
         return $stmt->fetch();
     }
+
+    function getRetrievalInfo() {
+        $sql = 'SELECT email, phone FROM users;';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    function updatePasswordByEmail($email, $password) {
+        $sql = 'UPDATE users SET password = :password WHERE email = :email;';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+    }
 }

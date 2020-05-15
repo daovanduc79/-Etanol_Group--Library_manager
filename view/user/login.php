@@ -383,7 +383,7 @@
                     }
                     ?>
                     <div class="text-right p-t-8 p-b-31">
-                        <a href="#">
+                        <a href="index.php?pages=user&actions=forgot">
                             Forgot password?
                         </a>
                     </div>

@@ -36,20 +36,44 @@ $student = new \Controller\ControllerStudent();
 if (isset($_REQUEST['pages'])) {
     switch ($_REQUEST['pages']) {
         case 'user':
+            checkTrueLogin();
             if (isset($_REQUEST['actions'])) {
                 switch ($_REQUEST['actions']) {
                     case 'login':
+                        checkTrueLogin();
                         $user->login();
                         break;
                     case 'registration':
+                        checkTrueLogin();
                         $user->registration();
                         break;
+                    case 'logout':
+                        $user->logout();
+                        break;
+                    case 'forgot':
+                        checkTrueLogin();
+                        if (isset($_REQUEST['param'])) {
+                            switch ($_REQUEST['param']) {
+                                case 'resetPassword':
+                                    $user->resetPassword();
+                                    break;
+                                default:
+                                    $user->forgotPassword();
+                            }
+                        } else {
+                            $user->forgotPassword();
+                        }
+                        break;
                     default:
+                        checkTrueLogin();
                         $user->login();
                 }
+            } else{
+                $user->login();
             }
             break;
         case 'category':
+            checkFalseLogin();
             if (isset($_REQUEST['actions'])) {
                 switch ($_REQUEST['actions']) {
                     case 'add':
@@ -84,6 +108,7 @@ if (isset($_REQUEST['pages'])) {
             }
             break;
         case 'book':
+            checkFalseLogin();
             if (isset($_REQUEST['actions'])) {
                 switch ($_REQUEST['actions']) {
                     case 'add':
@@ -100,6 +125,7 @@ if (isset($_REQUEST['pages'])) {
             }
             break;
         case 'student':
+            checkFalseLogin();
             if (isset($_REQUEST['actions'])) {
                 switch ($_REQUEST['actions']) {
                     case 'add':
@@ -107,6 +133,13 @@ if (isset($_REQUEST['pages'])) {
                         break;
                     case 'edit':
                         $student->edit();
+                        break;
+                    case 'search':
+                        if (isset($_REQUEST['keyword'])) {
+                            $student->search();
+                        } else {
+                            header('Location: index.php?pages=student');
+                        }
                         break;
                     default :
                         header('Location: index.php?pages=student');
@@ -116,6 +149,7 @@ if (isset($_REQUEST['pages'])) {
             }
             break;
         case 'home':
+            checkFalseLogin();
             $home->show();
             break;
         default:

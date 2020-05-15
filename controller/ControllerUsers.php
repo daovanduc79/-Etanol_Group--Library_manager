@@ -71,7 +71,7 @@ class ControllerUsers
             if ($checkInfo == 6) {
                 $user = new \Library\Users($id, $name, $email, $password, $phone);
                 $this->user->add($user);
-                $_SESSION['login'] = true;
+                $_SESSION['user'] = true;
                 unset($_SESSION['id']);
                 unset($_SESSION['name']);
                 unset($_SESSION['email']);
@@ -97,7 +97,7 @@ class ControllerUsers
             // check voi tren csdl
             $checkLogin = $this->user->login($email, $password);
             if ($checkLogin) {
-                $_SESSION['login'] = true;
+                $_SESSION['user'] = true;
                 // cho phep vao home
                 header('location: index.php?pages=home');
             } else {
@@ -106,6 +106,53 @@ class ControllerUsers
             }
         } else {
             include 'view/user/login.php';
+        }
+    }
+
+    function logout() {
+        session_destroy();
+        header('Location: index.php?pages=user&actions=login');
+    }
+    function forgotPassword() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $username = $_REQUEST['username'];
+            $phoneNumber = $_REQUEST['phoneNumber'];
+            $arrayRetrievalInfo = $this->user->getRetrievalInfo();
+            foreach ($arrayRetrievalInfo as $item) {
+                if ($item['email'] == $username && $item['phone'] == $phoneNumber) {
+                    $_SESSION['username'] = $username;
+                }
+            }
+            if (isset($_SESSION['username'])) {
+                header("Location: index.php?pages=user&actions=forgot&param=resetPassword");
+            } else {
+                include 'view/user/check.php';
+            }
+        } else {
+            include 'view/user/check.php';
+        }
+    }
+    function resetPassword() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['username'])) {
+            $password = $_REQUEST['password'];
+            $confirmPassword = $_REQUEST['confirmPassword'];
+            $checkPassword = checkPassword($password);
+            if ($checkPassword) {
+                if ($password == $confirmPassword) {
+                    $this->user->updatePasswordByEmail($_SESSION['username'], $password);
+                    $_SESSION['user'] = true;
+                    unset($_SESSION['username']);
+                    header('Location: index.php?pages=home');
+                } else {
+                    $_SESSION['checkConfirmPassword'] = false;
+                    include 'view/user/resetPassword.php';
+                }
+            } else {
+                $_SESSION['checkPassword'] = false;
+                include 'view/user/reset.php';
+            }
+        } else {
+            include 'view/user/reset.php';
         }
     }
 }

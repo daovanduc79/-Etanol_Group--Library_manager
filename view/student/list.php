@@ -14,8 +14,10 @@ include 'view/layout/nav_2.php';
     <div class="col-md-12">
         <div class="">
             <form class="classNameHere" role="search">
+                <input type="hidden" name="pages" value="student">
+                <input type="hidden" name="actions" value="search">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                    <input type="text" class="form-control" placeholder="Search" name="keyword" id="srch-term">
                     <div class="input-group-btn">
                         <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-search"></i>
                         </button>
@@ -80,7 +82,12 @@ include 'view/layout/nav_2.php';
                     </tbody>
                 </table>
             </div>
-        </div> <!-- card.// -->
+        </div>
+        <?php
+        if (isset($_REQUEST['keyword'])) {
+            echo 'Tìm thấy ' . count($students) . ' kết quả';
+        }
+        ?>
     </div>
 </div>
 <!--container end.//-->

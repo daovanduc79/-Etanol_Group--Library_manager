@@ -1,5 +1,5 @@
 <?php
-include '../layout/nav_2.php';
+include 'view/layout/nav_2.php';
 ?>
 <!doctype html>
 <html>

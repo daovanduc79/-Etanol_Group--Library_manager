@@ -34,7 +34,7 @@ function checkPhoneNUmber($phoneNumber)
 function checkFalseLogin()
 {
     if (!isset($_SESSION['user'])) {
-        header('Location: index.php?pages=user&actions=user');
+        header('Location: index.php?pages=user&actions=login');
     }
 }
 

@@ -1,6 +1,4 @@
 <style>
-    @import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
-
     .login-block {
         float: left;
         width: 100%;
@@ -19,15 +17,6 @@
         background: #fff;
         border-radius: 10px;
         box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.1);
-    }
-
-    .carousel-inner {
-        border-radius: 0 10px 10px 0;
-    }
-
-    .carousel-caption {
-        text-align: left;
-        left: 5%;
     }
 
     .login-sec {
@@ -179,10 +168,10 @@
                         ?>
                     </div>
                     <div class="form-check">
+                        <a href="index.php?pages=user" class="btn btn-login float-right">Cancel</a>
                         <button type="submit" class="btn btn-login float-right">Submit</button>
                     </div>
                 </form>
-                <div class="copy-text"><a href="">Forgot password</a></div>
             </div>
             <div class="col-md-8 banner-sec">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

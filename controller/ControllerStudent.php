@@ -105,4 +105,10 @@ class ControllerStudent
             include 'view/student/edit.php';
         }
     }
+
+    function search() {
+        $keyword = $_REQUEST['keyword'];
+        $students = $this->student->search($keyword);
+        include 'view/student/list.php';
+    }
 }
