@@ -367,13 +367,13 @@
                 <form class="login100-form validate-form">
                     <div class="wrap-input100 validate-input">
                         <span class="label-input100">Email</span>
-                        <input class="input100" type="text" name="username" placeholder="Type your username">
+                        <input class="input100" type="text" name="email" placeholder="Type your username">
                         <span class="focus-input100"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input">
                         <span class="label-input100">Password</span>
-                        <input class="input100" type="password" name="pass" placeholder="Type your password">
+                        <input class="input100" type="password" name="password" placeholder="Type your password">
                         <span class="focus-input100 password"></span>
                     </div>
                     <?php
@@ -393,7 +393,7 @@
                             <button class="btn btn-primary mr-2">
                                 Login
                             </button>
-                            <a class="btn btn-primary mr-2" href="registration.php">
+                            <a class="btn btn-primary mr-2" href="index.php?pages=user&actions=registration">
                                 New User
                             </a>
                         </div>

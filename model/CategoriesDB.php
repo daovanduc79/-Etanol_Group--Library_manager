@@ -3,7 +3,7 @@
 
 namespace Model;
 
-
+use PDO;
 class CategoriesDB extends LibraryDB
 {
     public function __construct()
@@ -36,5 +36,12 @@ class CategoriesDB extends LibraryDB
         $stmt->bindParam(2, $name);
         $stmt->bindParam(3, $image);
         $stmt->bindParam(4, $idOld);
+        $stmt->execute();
+    }
+
+    function search($keyword) {
+        $sql = "SELECT * FROM $this->nameTable WHERE id LIKE '%$keyword%' OR name LIKE '%$keyword%';";
+        $stmt = $this->conn->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 }

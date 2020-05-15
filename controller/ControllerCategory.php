@@ -64,7 +64,7 @@ class ControllerCategory
                 if (($_SESSION['checkImage'] == 'Lỗi : File đã tồn tại.' && $_SESSION['imageName'] == $_SESSION['imageById']) || $_SESSION['checkImage'] == "Lỗi: Image is empty") {
                     $category = new Categories($_SESSION['id'], $_SESSION['name'], $_SESSION['imageById']);
                     update($this->category, $category, $_SESSION['idOld']);
-                    header("Location: index.php?pages=student");
+                    header("Location: index.php?pages=category");
                 } elseif ($_SESSION['checkImage'] == 'Upload file thành công') {
                     $category = new Categories($_SESSION['id'], $_SESSION['name'], $_SESSION['imageName']);
                     unlink('images/' . $_SESSION['imageById']);
@@ -84,5 +84,23 @@ class ControllerCategory
             $_SESSION['imageById'] = $categoryById->image;
             include 'view/category/edit.php';
         }
+    }
+
+    function delete() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $id = $_REQUEST['id'];
+            $this->category->delete($id);
+            header('Location: index.php?pages=category');
+        } else {
+            $id = $_REQUEST['id'];
+            $categoryById = $this->category->get($id);
+            include 'view/category/delete.php';
+        }
+    }
+
+    function search() {
+        $keyword = $_REQUEST['keyword'];
+        $categories = $this->category->search($keyword);
+        include 'view/category/list.php';
     }
 }

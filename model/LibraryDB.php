@@ -37,11 +37,11 @@ class LibraryDB
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function delete()
+    public function delete($id)
     {
-        $sql = "DELETE FROM ?";
+        $sql = "DELETE FROM $this->nameTable WHERE id = ?";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bindParam(1, $this->nameTable);
+        $stmt->bindParam(1, $id);
 
         return $stmt->execute();
     }

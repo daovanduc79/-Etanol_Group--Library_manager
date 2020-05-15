@@ -16,6 +16,7 @@ include 'controller/ControllerUsers.php';
 include 'controller/ControllerHome.php';
 include 'controller/ControllerCategory.php';
 include 'controller/ControllerBook.php';
+include 'controller/ControllerStudent.php';
 
 include 'model/ConnectionDB.php';
 include 'model/BooksDB.php';
@@ -30,6 +31,7 @@ $user = new ControllerUsers();
 $home = new ControllerHome();
 $category = new ControllerCategory();
 $book = new ControllerBook();
+$student = new \Controller\ControllerStudent();
 
 if (isset($_REQUEST['pages'])) {
     switch ($_REQUEST['pages']) {
@@ -60,15 +62,26 @@ if (isset($_REQUEST['pages'])) {
                             header('Location: index.php?pages=category');
                         }
                         break;
+                    case 'delete':
+                        if (isset($_REQUEST['id'])) {
+                            $category->delete();
+                        } else {
+                            header('Location: index.php?pages=category');
+                        }
+                        break;
+                    case 'search':
+                        if (isset($_REQUEST['keyword'])) {
+                            $category->search();
+                        } else {
+                            header('Location: index.php?pages=category');
+                        }
+                        break;
                     default:
                         header('Location: index.php?pages=category');
                 }
             } else {
                 $category->show();
             }
-            break;
-        case 'home':
-            $home->show();
             break;
         case 'book':
             if (isset($_REQUEST['actions'])) {
@@ -85,6 +98,25 @@ if (isset($_REQUEST['pages'])) {
             } else {
                 $book->show();
             }
+            break;
+        case 'student':
+            if (isset($_REQUEST['actions'])) {
+                switch ($_REQUEST['actions']) {
+                    case 'add':
+                        $student->add();
+                        break;
+                    case 'edit':
+                        $student->edit();
+                        break;
+                    default :
+                        header('Location: index.php?pages=student');
+                }
+            } else {
+                $student->show();
+            }
+            break;
+        case 'home':
+            $home->show();
             break;
         default:
             $user->login();

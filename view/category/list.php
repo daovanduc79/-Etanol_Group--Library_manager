@@ -1,6 +1,6 @@
 <?php
 
-include '../layout/nav_2.php';
+include 'view/layout/nav_2.php';
 ?>
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -15,8 +15,10 @@ include '../layout/nav_2.php';
     <div class="col-md-12">
         <div class="">
             <form class="classNameHere" role="search">
+                <input type="hidden" name="pages" value="category">
+                <input type="hidden" name="actions" value="search">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                    <input type="text" class="form-control" placeholder="Search" name="keyword" id="srch-term">
                     <div class="input-group-btn">
                         <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-search"></i>
                         </button>
@@ -28,7 +30,6 @@ include '../layout/nav_2.php';
                 </div>
             </form>
         </div>
-
         <div class="">
             <div class="card">
                 <table class="table table-hover shopping-cart-wrap">
@@ -42,7 +43,7 @@ include '../layout/nav_2.php';
                     </thead>
                     <tbody>
                     <a href="#">
-                        <?php foreach ($categories as $category): ?>
+                        <?php foreach ($categories as $key => $category): ?>
                             <tr>
                                 <td><?php echo $category->id ?></td>
                                 <td>
@@ -51,9 +52,7 @@ include '../layout/nav_2.php';
                                     </h6>
                                 </td>
                                 <td>
-                                    <div class="price-wrap">
-                                        <var class="price"><?php echo $category->name ?></var>
-                                    </div>
+                                    <?php echo $category->name ?>
                                 </td>
                                 <td class="text-right">
                                     <a title=""
@@ -69,6 +68,11 @@ include '../layout/nav_2.php';
                 </table>
             </div>
         </div>
+        <?php
+        if (isset($_REQUEST['keyword'])) {
+            echo 'Tìm thấy ' . count($categories) . ' kết quả';
+        }
+        ?>
     </div>
 </div>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
