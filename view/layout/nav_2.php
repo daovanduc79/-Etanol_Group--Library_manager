@@ -95,7 +95,7 @@
         </div>
     </div>
     <li class="navbar-nav  my-2 my-lg-0">
-        <a class="btn btn-outline-danger my-2 my-sm-0" type="submit" href="index.php?pages=logout">Log out</a>
+        <a class="btn btn-outline-danger my-2 my-sm-0" type="submit" href="index.php?pages=user&actions=logout">Log out</a>
     </li>
 </nav>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
