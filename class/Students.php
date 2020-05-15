@@ -12,20 +12,18 @@ class Students
     protected $phone;
     protected $address;
     protected $birthday;
-    protected $class_id;
     protected $status;
     protected $image;
 
-    public function __construct($id, $name, $email, $phone, $address, $birthday, $class_id, $status, $image)
+    public function __construct($id, $name, $email, $phone, $image)
     {
         $this->id = $id;
         $this->name = $name;
         $this->email = $email;
         $this->phone = $phone;
-        $this->address = $address;
-        $this->birthday = $birthday;
-        $this->class_id = $class_id;
-        $this->status = $status;
+        $this->address = null;
+        $this->birthday = null;
+        $this->status = 'Clean';
         $this->image = $image;
     }
 
@@ -80,14 +78,6 @@ class Students
     /**
      * @return mixed
      */
-    public function getClassId()
-    {
-        return $this->class_id;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getStatus()
     {
         return $this->status;
@@ -99,5 +89,21 @@ class Students
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * @param null $address
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+    }
+
+    /**
+     * @param null $birthday
+     */
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
     }
 }

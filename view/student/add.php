@@ -1,5 +1,5 @@
 <?php
-include '../layout/nav_2.php';
+include 'view/layout/nav_2.php';
 ?>
 <!doctype html>
 <html>
@@ -113,45 +113,72 @@ include '../layout/nav_2.php';
 
 <div class="container">
     <div class="row">
-        <form role="form" class="col-md-9 go-right" method="post">
+        <form role="form" class="col-md-9 go-right" method="post" enctype="multipart/form-data">
             <h2>Add New</h2>
             <div class="form-group">
-                <input id="id" name="id" type="text" class="form-control" required>
+                <input id="id" name="id" type="text" class="form-control" value="<?php echo isset($_SESSION['id']) ? $_SESSION['id'] : '' ?>" required>
                 <label for="id">ID</label>
+                <?php
+                if (isset($_SESSION['id']) && $_SESSION['id'] == '') {
+                    echo 'Id is malformed!';
+                }
+                unset($_SESSION['id']);
+                ?>
             </div>
             <div class="form-group">
-                <input id="name" name="name" type="text" class="form-control" required>
+                <input id="name" name="name" type="text" class="form-control" value="<?php echo isset($_SESSION['name']) ? $_SESSION['name'] : '' ?>" required>
                 <label for="name">Name</label>
+                <?php
+                if (isset($_SESSION['name']) && $_SESSION['name'] == '') {
+                    echo 'Name is malformed!';
+                }
+                unset($_SESSION['name']);
+                ?>
             </div>
             <div class="form-group">
-                <input id="email" name="email" type="text" class="form-control" required>
+                <input id="email" name="email" type="text" class="form-control" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>" required>
                 <label for="email">Email</label>
+                <?php
+                if (isset($_SESSION['email']) && $_SESSION['email'] == '') {
+                    echo 'Email is malformed!';
+                }
+                unset($_SESSION['email']);
+                ?>
             </div>
             <div class="form-group">
-                <input id="phone" name="phone" type="tel" class="form-control" required>
+                <input id="phone" name="phone" type="tel" class="form-control" value="<?php echo isset($_SESSION['phone']) ? $_SESSION['phone'] : '' ?>" required>
                 <label for="phone">Phone</label>
+                <?php
+                if (isset($_SESSION['phone']) && $_SESSION['phone'] == '') {
+                    echo 'Phone is malformed!';
+                }
+                unset($_SESSION['phone']);
+                ?>
             </div>
             <div class="form-group">
-                <textarea id="address" name="address" class="form-control" required></textarea>
+                <input id="address" name="address" class="form-control" value="<?php echo isset($_SESSION['address']) ? $_SESSION['address'] : '' ?>" required>
                 <label for="address">Address</label>
+                <?php
+                unset($_SESSION['address']);
+                ?>
             </div>
             <div class="form-group">
-                <input id="birthday" name="birthday" type="date" class="form-control" required>
+                <input id="birthday" name="birthDay" type="date" class="form-control" value="<?php echo isset($_SESSION['birthDay']) ? $_SESSION['birthDay'] : '' ?>" required>
                 <label for="birthday">Birthday</label>
+                <?php
+                unset($_SESSION['birthDay']);
+                ?>
             </div>
             <div class="form-group">
-                <select name="status">
-                    <option>Borrow</option>
-                    <option>Pay</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <input id="class_id" name="class_id" type="text" class="form-control" required>
-                <label for="class_id">Class ID</label>
-            </div>
-            <div class="form-group">
-                <input id="img" name="img" type="file" class="form-control" required>
+                <input id="img" name="image" type="file" class="form-control" required>
                 <label for="img">Image</label>
+                <?php
+                if (isset($_SESSION['checkImage']) && $_SESSION['checkImage'] != 'Upload file thành công') {
+                    echo $_SESSION['checkImage'];
+                }
+                unset($_SESSION['checkImage']);
+                unset($_SESSION['imageName']);
+                ?>
             </div>
             <button type="submit" class="btn btn-primary btn-sm">Confirm</button>
         </form>

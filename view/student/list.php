@@ -1,6 +1,6 @@
 <?php
 
-include '../layout/nav_2.php';
+include 'view/layout/nav_2.php';
 ?>
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -21,7 +21,7 @@ include '../layout/nav_2.php';
                         </button>
                     </div>
                     <div class="input-group-btn">
-                        <a href="index.php?pages=book&actions=add" class="btn btn-success btn-sm"
+                        <a href="index.php?pages=student&actions=add" class="btn btn-success btn-sm"
                            style="margin-left: 590px">Thêm mới</a>
                     </div>
                 </div>
@@ -33,7 +33,7 @@ include '../layout/nav_2.php';
                 <table class="table table-hover shopping-cart-wrap">
                     <thead class="text-muted">
                     <tr>
-                        <th scope="col">STT</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Image</th>
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
@@ -43,11 +43,15 @@ include '../layout/nav_2.php';
                     </thead>
                     <tbody>
                     <a href="#">
-                        <?php foreach ($students as $key => $student): ?>
+                        <?php foreach ($students as $student): ?>
                             <tr>
-                                <td><?php echo ++$key ?></td>
                                 <td>
-                                    <h6 class="title text-truncate"><?php echo $student->img ?></h6>
+                                    <div class="price-wrap">
+                                        <var class="price"><?php echo $student->id ?></var>
+                                    </div>
+                                </td>
+                                <td>
+                                    <h6 class="title text-truncate"><img width="70" height="100" src="images/<?php echo $student->image ?>"></h6>
                                 </td>
                                 <td>
                                     <div class="price-wrap">

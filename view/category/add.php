@@ -122,8 +122,8 @@ include '../layout/nav_2.php';
                 <?php
                 if (isset($_SESSION['id']) && $_SESSION['id'] == '') {
                     echo 'Id is malformed!';
-                    unset($_SESSION['id']);
                 }
+                unset($_SESSION['id']);
                 ?>
             </div>
             <div class="form-group">
@@ -133,8 +133,8 @@ include '../layout/nav_2.php';
                 <?php
                 if (isset($_SESSION['name']) && $_SESSION['name'] == '') {
                     echo 'Name is malformed!';
-                    unset($_SESSION['name']);
                 }
+                unset($_SESSION['name']);
                 ?>
             </div>
             <div class="form-group">
@@ -143,9 +143,9 @@ include '../layout/nav_2.php';
                 <?php
                 if (isset($_SESSION['checkImage']) && $_SESSION['checkImage'] != 'Upload file thành công') {
                     echo $_SESSION['checkImage'];
-                    unset($_SESSION['checkImage']);
-                    unset($_SESSION['imageName']);
                 }
+                unset($_SESSION['checkImage']);
+                unset($_SESSION['imageName']);
                 ?>
             </div>
             <button type="submit" class="btn btn-primary btn-sm">Confirm</button>
