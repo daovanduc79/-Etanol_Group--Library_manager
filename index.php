@@ -17,13 +17,15 @@ include 'controller/ControllerHome.php';
 include 'controller/ControllerCategory.php';
 include 'controller/ControllerBook.php';
 include 'controller/ControllerStudent.php';
+include 'controller/ControllerBorrow.php';
 
 include 'model/ConnectionDB.php';
-include 'model/BooksDB.php';
+include 'model/BookDB.php';
 include 'model/LibraryDB.php';
 include 'model/StudentsDB.php';
 include 'model/UsersDB.php';
 include 'model/CategoriesDB.php';
+include 'model/BorrowDB.php';
 
 include 'support/function.php';
 
@@ -32,6 +34,7 @@ $home = new ControllerHome();
 $category = new ControllerCategory();
 $book = new ControllerBook();
 $student = new \Controller\ControllerStudent();
+$borrow = new \Controller\ControllerBorrow();
 
 if (isset($_REQUEST['pages'])) {
     switch ($_REQUEST['pages']) {
@@ -146,6 +149,13 @@ if (isset($_REQUEST['pages'])) {
                 }
             } else {
                 $student->show();
+            }
+            break;
+        case 'borrow':
+            if (isset($_REQUEST['actions'])) {
+
+            } else {
+                $borrow->show();
             }
             break;
         case 'home':

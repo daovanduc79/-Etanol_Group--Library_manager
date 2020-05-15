@@ -4,7 +4,7 @@
 namespace Controller;
 
 
-use Model\BooksDB;
+use Model\BookDB;
 
 class ControllerBook
 {
@@ -12,7 +12,7 @@ class ControllerBook
 
     public function __construct()
     {
-        $this->book = new BooksDB();
+        $this->book = new BookDB();
     }
 
     public function show()

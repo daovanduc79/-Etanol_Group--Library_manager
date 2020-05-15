@@ -44,9 +44,9 @@ include 'view/layout/nav_2.php';
                     </tr>
                     </thead>
                     <tbody>
-                    <a href="#">
                         <?php foreach ($students as $student): ?>
                             <tr>
+                                <a href="index.php?pages=borrow">
                                 <td>
                                     <div class="price-wrap">
                                         <var class="price"><?php echo $student->id ?></var>
@@ -76,9 +76,9 @@ include 'view/layout/nav_2.php';
                                     <a href="./index.php?pages=delete&id=<?php echo $student->id; ?>"
                                        class="btn btn-danger btn-sm"> × Remove</a>
                                 </td>
+                                </a>
                             </tr>
                         <?php endforeach; ?>
-                    </a>
                     </tbody>
                 </table>
             </div>

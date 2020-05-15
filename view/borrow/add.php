@@ -117,7 +117,7 @@ include 'view/layout/nav_2.php';
             <h2>Add New Borrow</h2>
             <div class="form-group">
                 <input id="id" name="id" type="text" class="form-control" required>
-                <label for="id">ID</label>
+                <label for="id">Borrow ID</label>
             </div>
             <div class="form-group">
                 <input id="student_id" name="student_id" type="text" class="form-control" required>
