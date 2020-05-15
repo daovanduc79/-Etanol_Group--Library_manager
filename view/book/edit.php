@@ -1,5 +1,5 @@
 <?php
-include '../layout/nav.php';
+include 'view/layout/nav.php';
 ?>
 <!doctype html>
 <html>
@@ -116,45 +116,44 @@ include '../layout/nav.php';
         <form role="form" class="col-md-9 go-right" method="post">
             <h2>Edit</h2>
             <div class="form-group">
-                <input id="id" name="id" type="text" class="form-control" required>
-                <label for="id">ID</label>
+                <input id="id" name="id" type="hidden" value="<?php echo $books->id?>" class="form-control" required>
             </div>
             <div class="form-group">
-                <input id="name" name="name" type="text" class="form-control" required>
+                <input id="name" name="name" type="text" value="<?php echo $books->name?>" class="form-control" required>
                 <label for="name">Name</label>
             </div>
             <div class="form-group">
-                <input id="author" name="author" type="text" class="form-control" required>
+                <input id="author" name="author" value="<?php echo $books->author?>" type="text" class="form-control" required>
                 <label for="author">Author</label>
             </div>
             <div class="form-group">
-                <input id="price" name="price" type="tel" class="form-control" required>
+                <input id="price" name="price" value="<?php echo $books->price?>" type="tel" class="form-control" required>
                 <label for="price">Price</label>
             </div>
             <div class="form-group">
-                <textarea id="producer" name="producer" class="form-control" required></textarea>
+                <input id="producer" name="producer" value="<?php echo $books->producer?>" type="text" class="form-control" required>
                 <label for="producer">Producer</label>
             </div>
             <div class="form-group">
-                <input id="category ID" name="category ID" type="text" class="form-control" required>
-                <label for="category ID">Category ID</label>
+                <input id="category_id" name="category_id" value="<?php echo $books->category_id?>" type="text" class="form-control" required>
+                <label for="category_id">Category ID</label>
             </div>
             <div class="form-group">
                 <select name="status">
-                    <option>New</option>
+                    <option selected><?php echo $books->status?></option>
                     <option>Old</option>
                 </select>
             </div>
             <div class="form-group">
-                <input id="amount" name="amount" type="text" class="form-control" required>
-                <label for="amount">Amount</label>
+                <input id="number_of_books" name="number_of_books" value="<?php echo $books->number_of_books?>" type="text" class="form-control" required>
+                <label for="number_of_books">Number of books</label>
             </div>
             <div class="form-group">
-                <input id="img" name="img" type="file" class="form-control" required>
-                <label for="img">Image</label>
+                <input id="image" name="image" value="<?php echo $books->image?>" type="file" class="form-control" required>
+                <label for="image">Image</label>
             </div>
             <button type="submit" class="btn btn-primary btn-sm">Confirm</button>
-            <a class="btn btn-default btn-sm" href="index.php">Cancel</a>
+            <a class="btn btn-default btn-sm" href="index.php?pages=book">Cancel</a>
         </form>
     </div>
 </div>

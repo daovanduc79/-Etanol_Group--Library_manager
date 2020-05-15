@@ -8,9 +8,8 @@ include 'view/layout/nav.php';
 
 <div class="container">
     <div class="col-md-12">
-        <a href="index.php?pages=add_book" class="btn btn-success btn-sm"
-           style="margin-left: 92.5%">Thêm
-            mới</a>
+        <a href="index.php?pages=book&actions=add" class="btn btn-success btn-sm"
+           style="margin-left: 92.5%">Thêm mới</a>
         <div class="card">
             <table class="table table-hover shopping-cart-wrap">
                 <thead class="text-muted">
@@ -28,7 +27,8 @@ include 'view/layout/nav.php';
                     <tr>
                         <td><?php echo ++$key ?></td>
                         <td>
-                            <h6 class="title text-truncate"><?php echo $book->img ?></h6>
+                            <h6 class="title text-truncate"><img width="70" height="100"
+                                                                 src="images/<?php echo $book->image ?>"></h6>
                         </td>
                         <td>
                             <div class="price-wrap">
@@ -46,9 +46,9 @@ include 'view/layout/nav.php';
                             </div>
                         </td>
                         <td class="text-right">
-                            <a title="" href="./index.php?pages=edit_book&id=<?php echo $book->id; ?>"
+                            <a title="" href="index.php?pages=book&actions=edit&id=<?php echo $book->id; ?>"
                                class="btn btn-success btn-sm">Edit</a>
-                            <a href="./index.php?pages=delete_book&id=<?php echo $book->id; ?>"
+                            <a href="index.php?pages=book&actions=delete&id=<?php echo $book->id; ?>"
                                class="btn btn-danger btn-sm"> × Remove</a>
                         </td>
                     </tr>

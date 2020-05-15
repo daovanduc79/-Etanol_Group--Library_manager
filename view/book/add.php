@@ -1,5 +1,5 @@
 <?php
-include '../layout/nav.php';
+include 'view/layout/nav.php';
 ?>
 <!doctype html>
 <html>
@@ -136,7 +136,7 @@ include '../layout/nav.php';
                 <label for="producer">Producer</label>
             </div>
             <div class="form-group">
-                <input id="category ID" name="category ID" type="text" class="form-control" required>
+                <input id="category ID" name="category_id" type="text" class="form-control" required>
                 <label for="category ID">Category ID</label>
             </div>
             <div class="form-group">
@@ -146,11 +146,11 @@ include '../layout/nav.php';
                 </select>
             </div>
             <div class="form-group">
-                <input id="amount" name="amount" type="text" class="form-control" required>
-                <label for="amount">Amount</label>
+                <input id="amount" name="number_of_books" type="text" class="form-control" required>
+                <label for="amount">Number_of_books</label>
             </div>
             <div class="form-group">
-                <input id="img" name="img" type="file" class="form-control" required>
+                <input id="img" name="image" type="file" class="form-control" required>
                 <label for="img">Image</label>
             </div>
             <button type="submit" class="btn btn-primary btn-sm">Confirm</button>

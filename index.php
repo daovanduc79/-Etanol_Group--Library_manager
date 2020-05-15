@@ -79,6 +79,9 @@ if (isset($_REQUEST['pages'])) {
                     case 'edit':
                         $book->edit();
                         break;
+                    case 'delete':
+                        $book->delete();
+                        break;
                     default :
                         header('Location: index.php?pages=book');
                 }
