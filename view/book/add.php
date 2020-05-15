@@ -113,50 +113,70 @@ include 'view/layout/nav_2.php';
 
 <div class="container">
     <div class="row">
-        <form role="form" class="col-md-9 go-right" method="post">
+        <form role="form" class="col-md-9 go-right" method="post" enctype="multipart/form-data">
             <h2>Add New</h2>
             <div class="form-group">
-                <input id="id" name="id" type="text" class="form-control" required>
+                <input id="id" name="id" type="text" class="form-control" value="<?php echo isset($_SESSION['id'])?$_SESSION['id']:'' ?>" required>
                 <label for="id">ID</label>
+                <?php
+                    if (isset($_SESSION['id'])&&!$_SESSION['id']) {
+                        echo 'Id already exists';
+                    }
+                ?>
             </div>
             <div class="form-group">
-                <input id="name" name="name" type="text" class="form-control" required>
+                <input id="name" name="name" type="text" class="form-control" value="<?php echo isset($_SESSION['name'])?$_SESSION['name']:'' ?>" required>
                 <label for="name">Name</label>
             </div>
             <div class="form-group">
-                <input id="author" name="author" type="text" class="form-control" required>
+                <input id="author" name="author" type="text" class="form-control" value="<?php echo isset($_SESSION['author'])?$_SESSION['author']:'' ?>" required>
                 <label for="author">Author</label>
             </div>
             <div class="form-group">
-                <input id="price" name="price" type="tel" class="form-control" required>
+                <input id="price" name="price" type="tel" class="form-control" value="<?php echo isset($_SESSION['price'])?$_SESSION['price']:'' ?>" required>
                 <label for="price">Price</label>
             </div>
             <div class="form-group">
-                <textarea id="producer" name="producer" class="form-control" required></textarea>
+                <input id="producer" name="producer" class="form-control" value="<?php echo isset($_SESSION['producer'])?$_SESSION['producer']:'' ?>" required>
                 <label for="producer">Producer</label>
             </div>
             <div class="form-group">
-                <input id="category ID" name="category ID" type="text" class="form-control" required>
+                <input id="category ID" name="category_id" type="text" class="form-control" value="<?php echo isset($_SESSION['category_id'])?$_SESSION['category_id']:'' ?>" required>
                 <label for="category ID">Category ID</label>
+                <?php
+                if (isset($_SESSION['category_id'])&&!$_SESSION['category_id']) {
+                    echo "Category Id don't already exists";
+                }
+                ?>
             </div>
             <div class="form-group">
-                <select name="status">
-                    <option>New</option>
-                    <option>Old</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <input id="amount" name="amount" type="text" class="form-control" required>
+                <input id="amount" name="amount" type="text" class="form-control" value="<?php echo isset($_SESSION['amount'])?$_SESSION['amount']:'' ?>" required>
                 <label for="amount">Amount</label>
             </div>
             <div class="form-group">
-                <input id="img" name="img" type="file" class="form-control" required>
-                <label for="img">Image</label>
+                <input id="img" name="image" type="file" class="form-control" required>
+                <label for="image">Image</label>
+                <?php
+                if (isset($_SESSION['checkImage']) && $_SESSION['checkImage'] != 'Upload file thành công') {
+                    echo $_SESSION['checkImage'];
+                }
+                ?>
             </div>
             <button type="submit" class="btn btn-primary btn-sm">Confirm</button>
         </form>
     </div>
 </div>
+<?php
+unset($_SESSION['id']);
+unset($_SESSION['name']);
+unset($_SESSION['author']);
+unset($_SESSION['price']);
+unset($_SESSION['producer']);
+unset($_SESSION['amount']);
+unset($_SESSION['category_id']);
+unset($_SESSION['imageName']);
+unset($_SESSION['checkImage']);
+?>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </body>

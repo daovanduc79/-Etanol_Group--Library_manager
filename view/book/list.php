@@ -33,7 +33,7 @@ include 'view/layout/nav_2.php';
                 <table class="table table-hover shopping-cart-wrap">
                     <thead class="text-muted">
                     <tr>
-                        <th scope="col">STT</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Image</th>
                         <th scope="col">Name</th>
                         <th scope="col">Author</th>
@@ -43,11 +43,11 @@ include 'view/layout/nav_2.php';
                     </thead>
                     <tbody>
                     <a href="#">
-                        <?php foreach ($books as $key => $book): ?>
+                        <?php foreach ($books as $book): ?>
                             <tr>
-                                <td><?php echo ++$key ?></td>
+                                <td><?php echo $book->id ?></td>
                                 <td>
-                                    <h6 class="title text-truncate"><?php echo $book->img ?></h6>
+                                    <h6 class="title text-truncate"><img width="70" height="100" src="images/<?php echo $book->image ?>"></h6>
                                 </td>
                                 <td>
                                     <div class="price-wrap">
@@ -61,7 +61,7 @@ include 'view/layout/nav_2.php';
                                 </td>
                                 <td>
                                     <div class="price-wrap">
-                                        <var class="price"><?php echo $book->category ?></var>
+                                        <var class="price"><?php echo $book->nameCategory ?></var>
                                     </div>
                                 </td>
                                 <td class="text-right">

@@ -1,6 +1,6 @@
 <?php
 
-use Controller\ControllerBook;
+
 use Controller\ControllerCategory;
 use Controller\ControllerHome;
 use Controller\ControllerUsers;
@@ -20,8 +20,8 @@ include 'controller/ControllerStudent.php';
 include 'controller/ControllerBorrow.php';
 
 include 'model/ConnectionDB.php';
-include 'model/BookDB.php';
 include 'model/LibraryDB.php';
+include 'model/BookDB.php';
 include 'model/StudentsDB.php';
 include 'model/UsersDB.php';
 include 'model/CategoriesDB.php';
@@ -32,7 +32,7 @@ include 'support/function.php';
 $user = new ControllerUsers();
 $home = new ControllerHome();
 $category = new ControllerCategory();
-$book = new ControllerBook();
+$book = new \Controller\ControllerBook();
 $student = new \Controller\ControllerStudent();
 $borrow = new \Controller\ControllerBorrow();
 

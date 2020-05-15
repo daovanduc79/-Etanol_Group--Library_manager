@@ -9,22 +9,22 @@ class Books
     protected $id;
     protected $name;
     protected $category_id;
-    protected $auth;
+    protected $author;
     protected $price;
     protected $image;
     protected $status;
     protected $producer;
     protected $number_of_books;
 
-    public function __construct($id, $name, $category_id, $auth, $price, $image, $status, $producer, $number_of_books)
+    public function __construct($id, $name, $category_id, $author, $price, $image, $producer, $number_of_books)
     {
         $this->id = $id;
         $this->name = $name;
         $this->category_id = $category_id;
-        $this->auth = $auth;
+        $this->author = $author;
         $this->price = $price;
         $this->image = $image;
-        $this->status = $status;
+        $this->status = 'New';
         $this->producer = $producer;
         $this->number_of_books = $number_of_books;
     }
@@ -56,9 +56,9 @@ class Books
     /**
      * @return mixed
      */
-    public function getAuth()
+    public function getAuthor()
     {
-        return $this->auth;
+        return $this->author;
     }
 
     /**

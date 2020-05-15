@@ -45,4 +45,11 @@ class LibraryDB
 
         return $stmt->execute();
     }
+
+    function getId() {
+        $sql = "SELECT id FROM $this->nameTable;";
+        $stmt=$this->conn->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
 }
